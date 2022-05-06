@@ -1,0 +1,27 @@
+<nav class="navbar bg-my">
+  <h1 routerLink="/">Portfolio</h1>
+</nav>
+<nav class="nav">
+  <ul>
+    <li><a [routerLink]="['/']">HOME</a></li>
+    <li><a (click)="appearListOne()">ADMIN<button class="list">&blacktriangledown;</button>
+      <ul [@listOne] = appear>
+        <li><a [routerLink]="['/admin','dashboard']">Dashboard</a></li>
+        <li><a [routerLink]="['/admin','create']">Create</a></li>
+        <li><a [routerLink]="['/admin','login']">LogIn</a></li>
+      </ul>
+    </a></li>
+    <li>
+      <a (click)="appearListSecond()">PARTNERS<button class="list">&blacktriangledown;</button>
+      </a>
+      <ul [@listSecond] = appear2>
+        <li><a href="https://console.firebase.google.com/">Firebase</a></li>
+        <li><a href="https://github.com/">GitHub</a></li>
+      </ul>
+    </li>
+    <li><a [routerLink]="['/empty']">OPTIONS</a></li>
+  </ul>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

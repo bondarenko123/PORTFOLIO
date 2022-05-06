@@ -1,0 +1,14 @@
+<div class="post" *ngIf="post$ | async as post">
+  <div class="header">
+    <h2>{{post.title}}</h2>
+
+    <button routerLink="/" class="btn bg-dark">&lt;</button>
+  </div>
+  <div class="info">
+    <strong>{{post.autor}}</strong>
+    <small>{{post.date | date:'medium'}}</small>
+  </div>
+  <div class="text">
+    <p><quill-view-html [content]="post.text"></quill-view-html></p>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<div *ngIf="posts.length; else loading">
+  <h1>Admin Dashboard</h1>
+  <div class="form">
+    <input type="text" [(ngModel)]="search">
+    <button type="button"
+
+    ><b>SEARCH</b></button>
+  </div>
+  <table>
+    <thead>
+    <tr class="thea">
+      <th>№</th>
+      <th>Name</th>
+      <th>Title</th>
+      <th>Date</th>
+      <th>Options</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let post of posts | searchPost:search;let idx = index">
+      <td>{{idx+1}}</td>
+      <td>{{post.autor}}</td>
+      <td>{{post.title}}</td>
+      <td>{{post.date | date:'medium'}}</td>
+      <td>
+        <div>
+          <button class="btn badge-dark open" [routerLink]="['/admin','post',post.id,'edit']">Open</button>
+          <button class="btn btn-danger" (click)="remove(post.id)">Remove</button>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <ng-template #loading>
+    <h1>Loading...</h1>
+  </ng-template>
+</div>

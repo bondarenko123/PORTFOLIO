@@ -1,0 +1,30 @@
+<div *ngIf="posts$ | async else loading">
+  <div class="form">
+    <input type="text" [(ngModel)]="search">
+    <button type="button"
+
+    ><b>SEARCH</b></button>
+  </div>
+  <div *ngFor="let post of posts$ | async  | searchPost:search"
+       class="card"
+  >
+    <div class="card-header">
+      <h3 [routerLink]="['/posts',post.id]">{{post.title}}</h3>
+
+      <small>{{post.date | date:'medium'}}</small>
+    </div>
+    <div class="card-content">
+      <small>{{post.autor}}</small>
+
+      <button
+        [routerLink]="['/posts',post.id]"
+        class="btn btn-dark"
+      >
+        Open</button>
+    </div>
+  </div>
+</div>
+<div>
+  <ng-template #loading><h1 class="load">Loading...</h1></ng-template>
+</div>
+

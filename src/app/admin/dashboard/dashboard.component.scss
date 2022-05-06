@@ -1,0 +1,35 @@
+
+  .form {
+    border: 2px solid gainsboro;
+    display: flex;
+    margin: 20px 3px 20px 1px;
+    &:hover {
+      border-color: darken(black, 10%);
+    }
+    button {
+      cursor: default;
+      margin:7px 50px;
+      border: none;
+      background: white;
+      font-size: 0.9em;
+    }
+  }
+  .open{
+    margin-right: 15px;
+  }
+  input {
+    width: 900px;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+  }
+  .thea {
+    background:black;
+    //border: 1px solid;
+  }
+  table {
+    text-align: center;
+  }
+
+
+

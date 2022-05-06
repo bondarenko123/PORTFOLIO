@@ -1,0 +1,28 @@
+<nav class="navbar bg-my">
+  <h1 *ngIf="auth.getToken()" [routerLink]="['dashboard']">Admin</h1>
+  <div>
+    <ul *ngIf="auth.getToken(); else home">
+      <li>
+        <a routerLink="/">Home</a>
+      </li>
+      <li routerLinkActive="active">
+        <a [routerLink]="['dashboard']">Dashboard</a>
+      </li>
+      <li routerLinkActive="active">
+        <a [routerLink]="['create']">Create</a>
+      </li>
+      <li routerLinkActive="active">
+        <a href="#" (click)="logout($event)">Exit</a>
+      </li>
+    </ul>
+    <div>
+      <ng-template #home><a routerLink="/">Home</a></ng-template>
+    </div>
+  </div>
+
+</nav>
+<app-alert></app-alert>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+

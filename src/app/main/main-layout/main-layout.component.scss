@@ -1,0 +1,32 @@
+:root{
+  --dark-color: #333333;
+}
+.nav{
+  margin-top: 0.5rem;
+  position: absolute;
+  left: 1px;
+  top: 48px;
+  background-color: #f6f4eb;
+  height: 130%;
+  li{
+    padding-bottom: 0.5rem;
+    padding-top: 0.9rem;
+    width: 150px;
+    text-align: center;
+  }
+  li.active a {
+    color: var(--dark-color);
+    font-weight: bold;
+  }
+  h1 {
+    cursor: pointer;
+    margin-left: 15px;
+  }
+  .list {
+    cursor: pointer;
+    border: none;
+    background: #f6f4eb;
+    padding-left: 5px;
+  }
+}
+

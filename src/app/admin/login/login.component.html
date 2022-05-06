@@ -1,0 +1,48 @@
+<div>
+  <form class="card badge-light" [formGroup]="form" (ngSubmit)="submit()">
+    <h2>Admin dashboard</h2>
+    <p class="err" *ngIf="message">{{message}}</p>
+    <div
+      [ngClass]="{invalid: form.controls['email'].invalid && form.controls['email'].touched}"
+      class="form-control">
+      <label for="email">Email</label>
+      <input type="email" id="email" formControlName="email">
+      <div
+        *ngIf="form.controls['email'].invalid && form.controls['email'].touched"
+        class="validation">
+        <small
+          *ngIf="form.get('email').errors.required"
+        >This field can't be empty. Please, enter your Email</small>
+        <small
+          *ngIf="form.get('email').errors.email"
+        >Invalid Email</small>
+      </div>
+    </div>
+
+    <div
+      [ngClass]="{invalid: form.controls['password'].invalid && form.controls['password'].touched}"
+      class="form-control">
+      <label for="password">Password</label>
+      <input type="password" id="password" formControlName="password">
+      <div
+        *ngIf="form.controls['password'].invalid && form.controls['password'].touched"
+        class="validation">
+        <small *ngIf="form.get('password').errors.required"
+        >This field can't be empty. Please, enter your password</small>
+        <small
+          *ngIf="form.get('password').errors.minlength"
+        >Your password has {{form.get('password').errors.minlength.actualLength}},
+          but it should be {{form.get('password').errors.minlength.requiredLength}}.
+        </small>
+      </div>
+    </div>
+
+    <button class="btn badge-dark" type="submit" [disabled]="form.invalid">Enter</button>
+    <p class="err"
+       *ngIf="auth.err$ | async as err"
+    >{{err}}</p>
+  </form>
+</div>
+<div *ngIf="isLogin"><h2>Loading...</h2></div>
+
+

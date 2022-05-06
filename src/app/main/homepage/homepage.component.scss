@@ -1,0 +1,45 @@
+.posts {
+  margin-top: 3rem;
+}
+.form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid gainsboro;
+  margin: 20px 3px 20px 129px;
+  max-width: 779px;
+  &:hover {
+    border-color: darken(black, 10%);
+  }
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //cursor: default;
+    margin:7px 50px;
+    border: none;
+    background: white;
+    font-size: 0.9em;
+  }
+}
+.open{
+  margin-right: 15px;
+}
+input {
+  width: 670px;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  display: flex;
+}
+h3 {
+  cursor: pointer;
+  &:hover {
+    color: darken(blue, 30%);
+    font-size: 1.2rem;
+  }
+}
+.load {
+  margin-left: 150px;
+}
+
